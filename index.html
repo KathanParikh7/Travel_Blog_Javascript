@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>HERO SECTION</title>
+
+      <link rel="stylesheet" href="style.css">
+
+      <link href="https://fonts.googleapis.com/css?family=Darker+Grotesque:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+      <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+      <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css">
+      <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
+
+<body>
+      <div class="wrapper">
+
+            <div class="video-container">
+                  <video playsinline autoplay muted loop id="bgvid">
+                        <source src="Breathing India - Travel Video.mp4" type="video/mp4">
+                  </video>
+
+            </div>
+
+            <div class="header">
+				  <h1 id= "x">Hello</h1>
+                  <h1>Welcome to travel diary!</h1>
+				<center>
+					<h4>Do you like traveling?</h4>
+					<form action="gallery.html">
+					<input type="button" class="btn" id="1" value="yes" onmouseover="f1('yes','no')" onclick="f2(this)" /> <input type="button" class="btn" id="2" value="no" onmouseover="f1('no','yes')" onclick="f2(this)" />
+					</form>
+				</center>
+            </div>
+
+            <nav class="nav">
+                  <span id="brand">
+                        <a href="index.html">Land Lopers</a>
+                  </span>
+
+                  <ul id="menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="wishlist.html">Wish list</a></li>
+						<li><a href="faq.html">Faq</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                  </ul>
+
+                  <div id="toggle">
+                        <div class="span">menu</div>
+                  </div>
+
+            </nav>
+
+            <div id="resize">
+                  <div class="close-btn">close</div>
+
+                  <ul id="menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="wishlist.html">Wish list</a></li>
+						<li><a href="faq.html">Faq</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                  </ul>
+            </div>
+      </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+
+// navigation starts here
+$("#toggle").click(function() {
+            $(this).toggleClass('on');
+            $("#resize").toggleClass("active");
+      });
+      $("#resize ul li a").click(function() {
+            $(this).toggleClass('on');
+            $("#resize").toggleClass("active");
+      });
+      $(".close-btn").click(function() {
+            $(this).toggleClass('on');
+            $("#resize").toggleClass("active");
+      });
+
+	// Script for riddle
+	function f1(x,y)
+	{
+		var m = document.getElementById("1");
+		var n = document.getElementById("2");
+			m.value=x;
+			n.value=y;		
+			m.style.color = "#d3ae87";
+			n.style.color = "#d3ae87";
+	}
+	function f2(x){
+		window.location.href="gallery.html";
+	}
+	window.onload = function () {
+		if (localStorage.getItem("hasCodeRunBefore") === null) {
+       
+        localStorage.setItem("hasCodeRunBefore", true);
+		}else{
+			$("#x").text("Hello again!");
+		}
+	}
+
+</script>
+</body>
+</html>
